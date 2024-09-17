@@ -1,0 +1,414 @@
+/* asegura que el menu se mantenga en su lugar */
+* { 
+    padding: 0; /* Elimina el padding por defecto */
+    margin: 0;  /* Elimina el margin por defecto */
+    text-decoration: none; /* Elimina la decoración de texto por defecto */
+}
+
+/* Estilos para html y body */
+html, body {
+    margin: 0; /* Elimina el margin por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    text-decoration: none; /* Elimina la decoración de texto por defecto */
+    min-height: 100%; /* Asegura que el body ocupe al menos el 100% de la altura de la ventana */
+    width: 100%; /* Asegura que el body ocupe el 100% del ancho de la ventana */
+}
+
+/* Estilo para el fondo de la página con una imagen fija */
+.body2 {
+    background-image: url(fondoo.jpeg); /* Define la imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    background-attachment: fixed; /* Mantiene la imagen de fondo fija mientras se desplaza el contenido */
+    background-position: center; /* Centra la imagen de fondo */
+}
+
+/* Estilo del contenedor principal de contenido con un gradiente */
+.content {
+
+    background: linear-gradient(
+        90deg,
+        rgb(10, 10, 10)0%, /* Color inicial del gradiente */
+        rgb(61, 60, 60)100% /* Color final del gradiente */
+    );
+}
+
+/* Estilo del menú de navegación */
+.menu {
+    position: relative; /* Posiciona el menú de forma relativa a su posición original */
+    top: 0px; /* Coloca el menú en la parte superior */
+    left: 0px; /* Coloca el menú en el borde izquierdo */
+    display: flex; /* Usa flexbox para alinear los elementos dentro del menú */
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+}
+
+/* Estilo del logo del menú */
+.logo {
+    font-size: 25px; /* Tamaño de fuente del logo */
+    color: rgb(251, 246, 246); /* Color del texto del logo */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    font-weight: bold; /* Establece el peso de la fuente en negrita */
+}
+
+/* Estilo de los elementos de la barra de navegación */
+.menu .navbar ul li {
+    position: relative; /* Posiciona los elementos de lista de forma relativa */
+    float: left; /* Flota los elementos de lista a la izquierda */
+}
+
+/* Estilo de los enlaces de la barra de navegación */
+.menu .navbar ul li a {
+    font-size: 18px; /* Tamaño de fuente de los enlaces */
+    padding: 10px; /* Espaciado interno de los enlaces */
+    display: block; /* Hace que los enlaces sean bloques para ocupar todo el espacio disponible */
+    font-weight: bold; /* Establece el peso de la fuente en negrita */
+    color: #f1f1f1; /* Color del texto de los enlaces */
+    background: linear-gradient(
+        90deg,
+        rgb(6, 6, 6)0%, /* Color inicial del fondo degradado */
+        rgb(77, 74, 71)100% /* Color final del fondo degradado */
+    );
+}
+
+/* Cambia el color del texto del enlace al pasar sobre él */
+.menu .navbar ul li a:hover {
+    color: #5d1010; /* Color del texto cuando pasas sobre el enlace */
+}
+
+/* Oculta el menú  */
+#menu {
+    display: none; 
+}
+
+/* Estilo del ícono del menú */
+.menu-icono {
+    width: 2vw; /* Establece el ancho del ícono como 2% del ancho de la ventana */
+}
+
+/* Estilo del título h1 */
+h1 {
+    font-size: 45px; 
+    margin-left: 20px; 
+    font-style: oblique;
+}
+
+/* Estilo del título h2 */
+h2 {
+    font-size: 30px; 
+    color: rgb(162, 108, 9); 
+    font-style: italic; 
+}
+
+/* Estilo del título h3 */
+h3 {
+    color: #f4e6e6; 
+    font-style: italic; 
+}
+
+/* Estilos para pantallas de menos de 100vw (generalmente móviles) */
+@media(max-width:100vw) {
+    .content {
+        min-height: 70px; /* Reduce la altura mínima del contenedor en pantallas pequeñas */
+    }
+
+    .menu {
+        top: 10px; /* Añade un espacio de 10px en la parte superior del menú */
+        padding: 20px; /* Añade un espaciado interno de 20px al menú */
+    }
+
+    .menu label {
+        display: initial; /* Muestra el label en dispositivos móviles */
+    }
+
+    .menu .navbar {
+        position: absolute; /* Posiciona la barra de navegación de forma absoluta dentro del menú */
+        top: 100%; /* Coloca la barra de navegación justo debajo del menú */
+        left: 0; /* Coloca la barra de navegación en el borde izquierdo del contenedor */
+        right: 0; /* Coloca la barra de navegación en el borde derecho del contenedor */
+        display: none; /* Oculta la barra de navegación por defecto */
+    }
+
+    .menu .navbar ul li {
+        width: 100vw; /* Establece el ancho de cada elemento de lista al 100% del ancho de la ventana */
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial; /* Muestra la barra de navegación cuando el checkbox está marcado */
+    }
+}
+
+
+.buttons {
+    min-width: 70vw; 
+    display: flex; /* Usa flexbox para alinear los elementos dentro del contenedor */
+    justify-content: space-around; /* Distribuye los elementos con espacio alrededor */
+}
+
+/* Estilo de los enlaces dentro del contenedor de botones */
+.buttons a {
+    text-decoration: none; /* Elimina la decoración de texto de los enlaces */
+    font-size: 28px; /* Tamaño de fuente de los enlaces */
+    width: 60px; /* Ancho de los enlaces */
+    height: 60px; /* Altura de los enlaces */
+    line-height: 60px; /* Altura de línea igual a la altura del enlace para centrar el texto verticalmente */
+    text-align: center; /* Centra el texto horizontalmente */
+    background: #baabab; /* Color de fondo de los enlaces */
+    color: #040404; /* Color del texto de los enlaces */
+    border-radius: 50%; /* Hace que los enlaces sean circulares */
+    box-shadow: 2px 2px 5px rgba(85, 77, 77, 0.5); /* Añade una sombra sutil a los enlaces */
+    transition: all .4s ease-in-out; /* Aplica una transición suave para todos los cambios */
+}
+
+/* Efecto al pasar sobre los botones */
+.buttons a:hover {
+    transform: scale(1.2); /* Aumenta el tamaño del botón al pasar sobre él */
+}
+
+/* Estilo del contenedor de contenido con alineación central */
+.contenedor {
+    display: flex; /* Usa flexbox para alinear los elementos dentro del contenedor */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+}
+
+/* Margen entre elementos dentro del contenedor */
+.espacio {
+    margin: 0px 15px; /* Añade margen horizontal de 15px a los elementos */
+}
+
+/* Estilo del cuadro con fondo degradado */
+#cuadro { 
+    padding: 20px; /* Añade espaciado interno de 20px */
+    max-width: 90%; /* tamaño de ña caja  */
+    border: 4px; /* Añade un borde de 4px */
+    text-align: center; /* Centra el texto dentro del cuadro */
+    border-radius: 20px; /* Redondea las esquinas del cuadro */
+    background: linear-gradient(
+        90deg,
+        rgba(46, 45, 45, 0.962)0%, 
+        rgba(37, 36, 37, 0.947)100% 
+    );
+}
+
+/* Estilo de la cajita2 con fondo animado */
+#cajita2 { 
+ 
+    margin: 0px auto; /* Elimina el margen exterior y centra el contenedor horizontalmente */
+    max-width: 100%; /* Establece el ancho máximo al 100% del contenedor */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    background: linear-gradient(45deg, #030303fb, #989291cd, #0a0000fd, #6c6564); /* Define un fondo degradado animado */
+    background-size: 400% 400%; /* Define el tamaño del fondo degradado para la animación */
+    transition: transform 0.3s ease,; /* Aplica una transición */
+    animation: gradientAnimation 10s ease infinite; /* Aplica una animación de degradado infinito */
+}
+
+/* Estilo de la cajita con bordes y fondo degradado */
+#cajita {
+    padding: 10px; /* Añade espaciado interno de 10px */
+    margin: 10px auto; /* Añade margen exterior de 10px y centra el contenedor horizontalmente */
+    max-width: 100%; /* Establece el ancho máximo al 100% del contenedor */
+border: 100%;
+    border-radius: 30px; /* Redondea las esquinas del cuadro */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    background: linear-gradient(
+        90deg,
+        rgba(57, 50, 50, 0.856)0%,
+        rgba(11, 11, 11, 0.761)100%
+    );
+}
+
+/* Estilo del contenedor de imágenes de la exposicion*/
+.imagenes {
+    display: flex; /* Usa flexbox para alinear los elementos dentro del contenedor */
+    justify-content: space-around; /* Distribuye los elementos con espacio alrededor */
+}
+
+/* Estilo de las fotos redondas */
+.foto-redonda {
+    width: 100px; /* Ancho de las fotos */
+    height: 100px; /* Altura de las fotos */
+    border-radius: 50%; /* Hace que las fotos sean circulares */
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+}
+
+/* Estilo de la sección de contacto con fondo animado */
+.contact-section {
+    display: flex; /* Usa flexbox para alinear los elementos dentro del contenedor */
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+    align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+    background: linear-gradient(45deg, #030303fb, #9a8986cd, #0a0000fd, #6c6564); /* Define un fondo degradado animado */
+    background-size: 400% 400%; /* Define el tamaño del fondo degradado para la animación */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil al contenedor */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aplica una transición suave para transformaciones y sombras */
+    animation: gradientAnimation 10s ease infinite; /* Aplica una animación de degradado infinito */
+    color: #fff; /* Color del texto dentro de la sección */
+    padding: 40px; /* Añade espaciado interno de 40px */
+    margin: 50px auto; /* Añade margen exterior de 50px y centra el contenedor horizontalmente */
+    width: 80%; /* Establece el ancho al 80% del contenedor */
+    border-radius: 10px; /* Redondea las esquinas de la sección */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil al contenedor */
+}
+
+
+
+/* Estilo del botón dentro de la sección de contacto */
+.contact-content button {
+    background-color: #350603; /* Color de fondo del botón */
+    color: #333; /* Color del texto del botón */
+    border: none; /* Elimina el borde del botón */
+    padding: 10px 20px; /* Añade espaciado interno de 10px vertical y 20px horizontal */
+    font-size: 16px; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+    border-radius: 5px; /* Redondea las esquinas del botón */
+    transition: background-color 0.3s; /* Aplica una transición suave para el color de fondo */
+}
+
+/* Efecto al pasar el ratón sobre el botón */
+.contact-content button:hover {
+    background-color: #e01600; /* Cambia el color de fondo del botón al pasar el ratón sobre él */
+}
+
+/* Estilo de la información de contacto */
+.contact-info {
+    flex: 0.4; /* Establece que el contenedor de información de contacto ocupe el 40% del espacio disponible */
+    background-color: #400404; /* Color de fondo del contenedor de información de contacto */
+    padding: 10px; /* Añade espaciado interno de 10px */
+    border-radius: 10px; /* Redondea las esquinas del contenedor */
+}
+
+/* Estilo del título dentro de la información de contacto */
+.contact-info h3 {
+    color: #fff; /* Color del texto del título */
+    margin-bottom: 20px; /* Añade margen inferior de 20px */
+    font-size: 22px; /* Tamaño de fuente del título */
+}
+
+/* Estilo de la lista dentro de la información de contacto */
+.contact-info ul {
+    list-style: none; /* Elimina los puntos de lista por defecto */
+    padding: 0; /* Elimina el espaciado interno de la lista */
+    color: #fff; /* Color del texto de los elementos de lista */
+}
+
+/* Estilo de los elementos de la lista dentro de la información de contacto */
+.contact-info ul li {
+    margin-bottom: 15px; /* Añade margen inferior de 15px a cada elemento de lista */
+    font-size: 16px; /* Tamaño de fuente de los elementos de lista */
+}
+
+/* Estilo de los elementos dentro de la lista con span */
+.contact-info ul li span {
+    font-weight: bold; /* Aplica un peso de fuente en negrita al span dentro de los elementos de lista */
+}
+/* Contenedor de elementos con un espacio de 20px entre ellos */
+.container2 {
+    display: flex; /* Usa flexbox para alinear los elementos dentro del contenedor */
+    gap: 20px; /* Añade un espacio de 20px entre los elementos flexibles */
+}
+
+/* Efecto de hover para el elemento .cajita2 */
+.cajita2:hover {
+    transform: translateY(-10px); /* Mueve el elemento 10px hacia arriba al pasar el ratón sobre él */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Añade una sombra más pronunciada al pasar el ratón sobre el elemento */
+}
+
+/* Animación del gradiente de fondo */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%; /* Posición inicial del gradiente */
+    }
+    50% {
+        background-position: 100% 100%; /* Posición del gradiente a mitad de la animación */
+    }
+    100% {
+        background-position: 0% 0%; /* Posición final del gradiente */
+    }
+}
+
+/* Estilo para los botones */
+button {
+    background-color: #450808; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Elimina el borde por defecto del botón */
+    border-radius: 50px; /* Redondea las esquinas del botón */
+    padding: 10px; /* Añade espaciado interno de 10px */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+    font-size: 20px; /* Tamaño de fuente del texto del botón */
+}
+
+/* Contenedor que alinea elementos flexibles con espacio de 20px entre ellos y los centra horizontalmente */
+.contenedor2 {
+    display: flex; /* Usa flexbox para alinear los elementos dentro del contenedor */
+    gap: 20px; /* Añade un espacio de 20px entre los elementos flexibles */
+    align-items: flex-start; /* Alinea los elementos en la parte superior del contenedor */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+/* Estilo para las cajas dentro del contenedor */
+.box {
+    background-color: #3b0303; /* Color de fondo de las cajas */
+    border: 3px solid #3b0303; /* Color del borde de las cajas */
+    border-radius: 8px; /* Redondea las esquinas de las cajas */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde de las cajas */
+    display: flex; /* Usa flexbox para alinear los elementos dentro de las cajas */
+    flex-direction: column; /* Coloca los elementos en una columna */
+    align-items: center; /* Alinea los elementos horizontalmente al centro */
+    max-width: 240px; /* Establece un ancho máximo para las cajas */
+}
+
+/* Estilo para las imágenes dentro de las cajas */
+.box img {
+    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Hace que la imagen se muestre como un bloque */
+}
+
+/* Estilo para la descripción dentro de las cajas */
+.box .description {
+    padding: 10px; /* Añade espaciado interno de 10px */
+    background-color: #3b0303; /* Color de fondo de la descripción */
+    font-size: 14px; /* Tamaño de fuente del texto de la descripción */
+    text-align: center; /* Centra el texto dentro de la descripción */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total del contenedor */
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Oculta el modal por defecto */
+    position: fixed; /* Fija el modal en la ventana del navegador */
+    z-index: 1; /* Asegura que el modal esté por encima de otros elementos */
+    left: 0; /* Coloca el modal en el borde izquierdo de la ventana */
+    top: 0; /* Coloca el modal en la parte superior de la ventana */
+    width: 100%; /* Establece el ancho del modal al 100% de la ventana */
+    height: 100%; /* Establece la altura del modal al 100% de la ventana */
+    overflow: auto; /* Hacer que el modal tenga una barra de desplazamiento si el contenido es más grande que la ventana */
+}
+
+/* Estilo del contenido del modal */
+.modal-content {
+    background: linear-gradient(45deg, #3a0a0a, #232121, #4b0606, #70372e); /* Fondo degradado animado */
+    background-size: 400% 400%; /* Tamaño del fondo degradado para la animación */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil al contenido del modal */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aplica transiciones suaves para transformaciones y sombras */
+    animation: gradientAnimation 10s ease infinite; /* Aplica la animación del gradiente infinito */
+    margin: 15% auto; /* Centra el modal en la ventana con un margen superior del 15% */
+    padding: 20px; /* Añade espaciado interno de 20px */
+    border: 0px; /* Elimina el borde del modal */
+    width: 90%; /* Establece el ancho del modal al 90% de la ventana */
+    max-width: 800px; /* Establece un ancho máximo para el modal */
+    border-radius: 50px; /* Redondea las esquinas del modal */
+}
+
+/* Estilo para el botón de cerrar el modal */
+.close {
+    color: #aaa; /* Color del texto del botón de cerrar */
+    float: right; /* Coloca el botón de cerrar a la derecha */
+    font-size: 30px; /* Tamaño de fuente del botón de cerrar */
+    font-weight: bold; /* Aplica un peso de fuente en negrita al botón de cerrar */
+}
+
+/* Efecto al pasar el ratón sobre el botón de cerrar */
+.close:hover,
+.close:focus {
+    color: black; /* Cambia el color del botón de cerrar al negro al pasar el ratón sobre él */
+    text-decoration: none; /* Elimina la decoración del texto del botón de cerrar */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón de cerrar */
+}
